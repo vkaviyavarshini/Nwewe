@@ -1,0 +1,43 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    padding: 5px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 12px; 
+    margin-left: 0;
+    background: black;    
+    padding-right: 10px;
+    margin:0px;
+    padding: 10px 0;
+    margin-left: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    background-size: cover ;
+    background-attachment: fixed;
+    background-image: url("https://res.cloudinary.com/dg2jouca2/image/upload/v1708424915/pexels-matej-1718168_tljlyr.jpg"); 
+  }
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #fff; 
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px; 
+    height: 5px;
+    
+} 
+
+.footer-icons a {
+    margin: 0 0; 
+}

@@ -1,0 +1,71 @@
+
+.page-title{
+    color: aliceblue;
+    font-size: 40px;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  background-size: cover ;
+  background-image: url("https://res.cloudinary.com/dg2jouca2/image/upload/v1708424915/pexels-matej-1718168_tljlyr.jpg"); 
+  background-attachment: fixed;
+}
+
+.product-container {
+    width: 300px;
+    height: 500px;
+    box-sizing: border-box; 
+    padding: 10px;
+    padding-top: 20px;
+    float: left; 
+    border: 0px solid #ddd; 
+    border-radius: 30px;
+    background-color: #f9f9f969; 
+    margin-left: 120px; 
+    margin-bottom: 60px;
+  }
+  
+  .clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+  .product-image {
+    width: 250px;
+    border-radius: 20px;
+    height: 250px;
+  }
+  
+  .product-name {
+    font-size: 20px;
+    margin: 5px 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: black;
+  }
+  
+  .product-price {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.348);
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 70px;
+    border-radius: 5px;
+    width: 50%;
+    color: white /* You can change the color as needed */
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .product-container {
+      width: 100%; /* Display one product per row on smaller screens */
+    }
+  }
+  
+  .action-icons {
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
