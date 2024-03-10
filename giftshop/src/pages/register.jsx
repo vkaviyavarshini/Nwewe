@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link , useNavigate} from "react-router-dom";
 import '../css/register.css';
+import { registerNewUser } from '../services/loginService';
 
 function Register() {
 
@@ -42,7 +43,12 @@ function Register() {
     console.log('Confirm Password:', confirmPassword);
     console.log('Role:', role);
     setError(''); // Clear error if there was one previously
-
+    registerNewUser({
+      name: userName,
+      email: email,
+      password: password,
+      roles: role
+    })
     navigate("/");
   };
 

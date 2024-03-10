@@ -5,23 +5,23 @@ import com.example.birthdayback.entity.Gifts;
 
 public class GiftsMapper {
     
-    public static GiftsDto mapToCakeDto(Gifts cake)
+    public static GiftsDto mapToGiftDto(Gifts gift)
     {
         return new  GiftsDto(
-            cake.getId(),
-            cake.getName(),
-            cake.getAmount(),
-            cake.getImageUrl()
+            gift.getId(),
+            gift.getName(),
+            gift.getAmount(),
+            gift.getImageUrl()
         );
     }
 
-    public static Gifts mapToCake(GiftsDto cakeDto)
+    public static Gifts mapToGift(GiftsDto giftDto)
     {
         return new Gifts(
-            cakeDto.getId(),
-            cakeDto.getName(),
-            cakeDto.getAmount(),
-            cakeDto.getImageUrl()
+            giftDto.getId(),
+            giftDto.getName(),
+            giftDto.getAmount(),
+            giftDto.getImageUrl()
         );
     }
 }

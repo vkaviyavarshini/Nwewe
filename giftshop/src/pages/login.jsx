@@ -1,6 +1,7 @@
 import '../css/login.css';
 import { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import { authenticate } from '../services/loginService';
 
 function Login() {
   const [password, setPassword] = useState('');
@@ -9,18 +10,18 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     // Basic validation
     if (!username || !password) {
       setError('Username and password are required');
       return;
     }
-
-    // Additional validation logic can be added here
-
-    // If all validations pass, perform login
-    console.log('Logging in with:', username, password);
-    navigate('/home');
+    await authenticate(username, password).then(res => {
+      console.log(res);
+      if(res.authenticated) {
+        res.isAdmin === 'ADMIN' ? navigate('/admin/usertable'): navigate('/home');
+      }
+    });
   };
 
   return (

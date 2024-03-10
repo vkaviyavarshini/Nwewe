@@ -8,7 +8,7 @@ const LeftSidebar = () => {
         <h2> CATEGORY </h2>
         <br/>
         <p className='ele'><Link to="/gifts">Gifts</Link></p>
-        <p className='ele'><Link to="/photo">Photo Frames</Link></p>
+        <p className='ele'><Link to="/cakes">Cakes</Link></p>
     </div>
   );
 };

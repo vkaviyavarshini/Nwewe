@@ -18,40 +18,40 @@ import  java.util.List;
 @AllArgsConstructor
 public class GiftsServiceImpl implements GiftsService {
     
-    private final  GiftsRepository cakeRepository;
+    private final  GiftsRepository giftRepository;
 
     @Override
-     public GiftsDto createCake(GiftsDto cakeDto) {
-        Gifts cake = GiftsMapper.mapToCake(cakeDto);
-        Gifts savedCake = cakeRepository.save(cake);
-        return GiftsMapper.mapToCakeDto(savedCake);
+     public GiftsDto createGift(GiftsDto giftDto) {
+        Gifts gift = GiftsMapper.mapToGift(giftDto);
+        Gifts savedGift = giftRepository.save(gift);
+        return GiftsMapper.mapToGiftDto(savedGift);
     }
 
     @Override
-    public GiftsDto getCakeById(Long cakeId) {
-        Gifts cake = cakeRepository.findById(cakeId)
-                .orElseThrow(() -> new ResourceNotFoundException("Cake not found with id: " + cakeId));
-        return GiftsMapper.mapToCakeDto(cake);
+    public GiftsDto getGiftById(Long giftId) {
+        Gifts gift = giftRepository.findById(giftId)
+                .orElseThrow(() -> new ResourceNotFoundException("Gift not found with id: " + giftId));
+        return GiftsMapper.mapToGiftDto(gift);
     }
 
     @Override
-    public List<GiftsDto> getAllCakes() {
-        List<Gifts> cakes = cakeRepository.findAll();
-        return cakes.stream().map(GiftsMapper::mapToCakeDto).collect(Collectors.toList());
+    public List<GiftsDto> getAllGifts() {
+        List<Gifts> gifts = giftRepository.findAll();
+        return gifts.stream().map(GiftsMapper::mapToGiftDto).collect(Collectors.toList());
     }
 
     @Override
-    public GiftsDto updateCake(Long cakeId, GiftsDto cakeDto) {
-        Gifts existingCake = cakeRepository.findById(cakeId)
-                .orElseThrow(() -> new ResourceNotFoundException("Cake not found with id: " + cakeId));
-        Gifts updatedCake = GiftsMapper.mapToCake(cakeDto);
-        updatedCake.setId(existingCake.getId());
-        Gifts savedCake = cakeRepository.save(updatedCake);
-        return GiftsMapper.mapToCakeDto(savedCake);
+    public GiftsDto updateGift(Long giftId, GiftsDto giftDto) {
+        Gifts existingGift = giftRepository.findById(giftId)
+                .orElseThrow(() -> new ResourceNotFoundException("Gift not found with id: " + giftId));
+        Gifts updatedGift = GiftsMapper.mapToGift(giftDto);
+        updatedGift.setId(existingGift.getId());
+        Gifts savedGift = giftRepository.save(updatedGift);
+        return GiftsMapper.mapToGiftDto(savedGift);
     }
 
     @Override
-    public void deleteCake(Long cakeId) {
-        cakeRepository.deleteById(cakeId);
+    public void deleteGift(Long giftId) {
+        giftRepository.deleteById(giftId);
     }
 }

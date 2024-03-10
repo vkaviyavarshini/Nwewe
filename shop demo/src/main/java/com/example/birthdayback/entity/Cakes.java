@@ -16,8 +16,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="photography")
-public class Photography {
+@Table(name="cakes")
+public class Cakes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

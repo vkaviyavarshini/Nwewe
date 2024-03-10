@@ -16,7 +16,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="cakes")
+@Table(name="gifts")
 public class Gifts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

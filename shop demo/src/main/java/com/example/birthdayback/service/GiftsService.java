@@ -6,14 +6,14 @@ import com.example.birthdayback.dto.GiftsDto;
 
 public interface GiftsService {
 
-    GiftsDto createCake(GiftsDto GiftsDto);
+    GiftsDto createGift(GiftsDto GiftsDto);
 
-    GiftsDto getCakeById(Long cakeId);
+    GiftsDto getGiftById(Long giftId);
 
-    List<GiftsDto> getAllCakes();
+    List<GiftsDto> getAllGifts();
 
-    GiftsDto updateCake(Long cakeId,GiftsDto GiftsDto);
+    GiftsDto updateGift(Long giftId,GiftsDto GiftsDto);
 
-    void deleteCake(Long cakeId);
+    void deleteGift(Long giftId);
 
 }

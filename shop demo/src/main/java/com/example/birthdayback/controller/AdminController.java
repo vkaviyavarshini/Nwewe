@@ -17,7 +17,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/admins")
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class AdminController {
     
     private  AdminService adminService;

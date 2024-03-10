@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import  { useEffect, useState } from 'react';
 import '../css/userprofile.css';
 import Navigation from './navigationBar'; 
 import LeftSidebar from './leftsidebar';
@@ -11,6 +11,12 @@ const UserProfile = () => {
     address: 'Coimbatore',
     phoneNumber: '9876543210',
   });
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const userDetail = JSON.parse(atob(token.split('.')[1]));
+    setUserDetails({...userDetails, name: userDetail.username, email: userDetail.email});
+  }, []);
 
   const [isEditing, setEditing] = useState(false);
 

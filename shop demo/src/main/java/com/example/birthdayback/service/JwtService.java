@@ -1,5 +1,6 @@
 package com.example.birthdayback.service;
 
+import com.example.birthdayback.entity.UserInfo;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -51,8 +52,11 @@ public class JwtService {
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
-    public String generateToken(String userName) {
+    public String generateToken(String userName, UserInfo info) {
         Map<String, Object> claims = new HashMap<>();
+        claims.put("username", info.getName());
+        claims.put("email", info.getEmail());
+        claims.put("role", info.getRoles());
         return createToken(claims, userName);
     }
 

@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PhotographyDto {
+public class CakesDto {
     private Long id;
     private String name;
     private String amount;

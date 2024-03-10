@@ -20,7 +20,7 @@ const About = lazy(() => import('./pages/about'));
 const UserProfile = lazy(() => import('./pages/userprofile'));
 // const BirthdayGifts = lazy(() => import('./pages/gifts/hbdgifts'));
 const Gifts = lazy(() => import('./pages/gifts'));
-const PhotoGraph = lazy(() => import('./pages/photograph'));
+const Cakes = lazy(() => import('./pages/cake'));
 // const GiftsForHer = lazy(() => import('./pages/gifts/hergifts'));
 // const GiftsForHim = lazy(() => import('./pages/gifts/himgifts'));
 // const Collections = lazy(() => import('./pages/gifts/collections'));
@@ -57,7 +57,7 @@ function App() {
         <Route path='/pay' element={<Suspense fallback={<div>Loading...</div>}><PaymentPage /></Suspense>}></Route>
         {/* <Route path='/hbd' element={<Suspense fallback={<div>Loading...</div>}><BirthdayGifts /></Suspense>}></Route> */}
         <Route path='/gifts' element={<Suspense fallback={<div>Loading...</div>}><Gifts /></Suspense>}></Route>
-        <Route path='/photo' element={<Suspense fallback={<div>Loading...</div>}><PhotoGraph /></Suspense>}></Route>
+        <Route path='/cakes' element={<Suspense fallback={<div>Loading...</div>}><Cakes /></Suspense>}></Route>
         {/* <Route path='/him' element={<Suspense fallback={<div>Loading...</div>}><GiftsForHim /></Suspense>}></Route>
         <Route path='/her' element={<Suspense fallback={<div>Loading...</div>}><GiftsForHer /></Suspense>}></Route>
         <Route path='/coll' element={<Suspense fallback={<div>Loading...</div>}><Collections /></Suspense>}></Route>

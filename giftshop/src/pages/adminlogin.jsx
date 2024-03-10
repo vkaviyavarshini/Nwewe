@@ -1,6 +1,7 @@
 import '../css/login.css';
 import { useState } from 'react';
 import { Link , useNavigate} from "react-router-dom";
+import { authenticate } from '../services/loginService';
 
 function AdminLogin() {
   const [email, setEmail] = useState('');
@@ -8,8 +9,11 @@ function AdminLogin() {
 
   const navigate = useNavigate();
   const handleLogin = () => {
-    console.log('Logging in with:', email, password);
-      navigate('/admin/usertable');
+    authenticate(email, password).then(res => {
+      console.log(res);
+      if(res.authenticated && res.isAdmin === 'ADMIN')
+        navigate('/admin/usertable');
+    });
   };
 
   return (

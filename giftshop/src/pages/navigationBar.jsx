@@ -18,6 +18,10 @@ const iconStyle = {
   marginRight:'8px',
 }
 
+const removeToken = () => {
+  localStorage.removeItem('token');
+}
+
 const Navigation = () => {
   return (
     <nav className="navbar">
@@ -45,7 +49,7 @@ const Navigation = () => {
           <img className='iconStyle' src={cart} alt="Cart" style={iconStyle}/>
         </Link>
         <Link to ='/'>
-          <img className='iconStyle' src={logout} alt="Logout" style={iconStyle}/>
+          <img className='iconStyle' src={logout} alt="Logout" onClick={() => removeToken()}style={iconStyle}/>
         </Link>
       </ul>
     </nav>

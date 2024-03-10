@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 import LeftSidebar from './leftsidebar';
 // import { Link } from 'react-router-dom';  
 
-const PhotoGraph = () => {
+const Cakes = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [products] = useState([
@@ -57,4 +57,4 @@ const PhotoGraph = () => {
   );
 };
 
-export default PhotoGraph;
+export default Cakes;
